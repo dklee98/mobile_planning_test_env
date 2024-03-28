@@ -136,7 +136,7 @@ if __name__=="__main__":
 
     rospy.init_node('turtlebot3_teleop')
     # 토픽 이름이 cmd_vel로 고정된 모습입니다.
-    pub = rospy.Publisher('/target/cmd_vel', Twist, queue_size=10)
+    pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
 
     turtlebot3_model = rospy.get_param("model", "waffle")
 
