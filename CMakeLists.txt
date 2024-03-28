@@ -23,6 +23,7 @@ catkin_install_python(PROGRAMS
   src/nmpc_node.py
   scripts/odom_noise.py
   scripts/scan2points.py
+  scripts/odom2pose.py
   plotting/plot_tracking.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
