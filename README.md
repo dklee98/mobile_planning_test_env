@@ -1,18 +1,5 @@
 # dynamic object environment setting
 
-<!-- add demo videos -->
-<div style="display: flex; justify-content: space-between;">
-  <video width="45%" controls>
-    <source src="videos/map_1.mp4" type="video/mp4">
-    map1 demo
-  </video>
-
-  <video width="45%" controls>
-    <source src="videos/map_2.mp4" type="video/mp4">
-    map2 demo
-  </video>
-</div>
-
 ## Setup
 
 ```
