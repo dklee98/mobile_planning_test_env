@@ -1,5 +1,20 @@
 # dynamic object environment setting
 
+<!-- add demo videos -->
+<div style="display: flex; justify-content: space-between;">
+  <video width="45%" controls>
+    <source src="videos/map_1.mp4" type="video/mp4">
+    map1 demo
+  </video>
+
+  <video width="45%" controls>
+    <source src="videos/map_2.mp4" type="video/mp4">
+    map2 demo
+  </video>
+</div>
+
+## Setup
+
 ```
 $ cd ~/simulation_setup
 $ mkdir build && cd build
@@ -56,8 +71,11 @@ reference: turtlebot3 tutorial
 export TURTLEBOT3_MODEL=waffle # burger, waffle, waffle_pi
 ```
 
-## Simulation
+## Usage
 ```roslaunch mobile_planning_test_env world_setup.launch```
+parameters
+- map_name [map1, map2, map3] # map3 is static map
+- world [map, map_dyn] # map_dyn is dynamic map
 
 ## Teleop
 ```rosrun mobile_planning_test_env teleop.py```
