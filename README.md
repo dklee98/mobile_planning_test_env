@@ -1,4 +1,9 @@
-# dynamic object environment setting
+# Dynamic object environment setting
+## Examples
+<div style="display: flex; justify-content: space-between;">
+    <img src="https://github.com/user-attachments/assets/6b98cb17-9711-40b3-9588-d31ec25dcbdd" alt="map_1" width="45%" />
+    <img src="https://github.com/user-attachments/assets/76c15e1d-d06e-46f0-97df-3d1639edd8b7" alt="map_2" width="45%" />
+</div>
 
 ## Setup
 
