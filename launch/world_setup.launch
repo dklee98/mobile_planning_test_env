@@ -1,6 +1,6 @@
 <launch>
     <!-- Parameter -->
-    <arg name="map_name" default="map2" doc="[map1, map2, map3]"/>
+    <arg name="map_name" default="map1" doc="[map1, map2, map3]"/>
     <arg name="world" default="map_dyn" doc="[map, map_dyn]"/>
     
     <!-- Teleop -->
@@ -18,17 +18,5 @@
         <arg name="verbose" value="false"/>
     </include>
 
-    <!-- Spawn Target & Agent -->
-        <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
-        <arg name="x" default="0.0"/>
-        <arg name="y" default="0.0"/>
-        <arg name="z" default="0.0"/>
-        <arg name="yaw" default="1.57"/>
-        <param name="robot_description" command="$(find xacro)/xacro --inorder $(find mobile_planning_test_env)/simulation_setup/robots/turtlebot3_$(arg model)_up_scan.urdf.xacro" />
-        <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" 
-            args="-urdf -model turtlebot3 -x $(arg x) -y $(arg y) -z $(arg z) -R 0 -P 0 -Y $(arg yaw) -param robot_description" />
-    
-    <!-- Visualizer -->
-    <node name="visualizer" pkg="rviz" type="rviz" args="-d $(find mobile_planning_test_env)/rviz.rviz"/>
 
 </launch>

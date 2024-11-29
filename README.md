@@ -17,36 +17,40 @@ $ source ~/.bashrc
 
 ## How to use dynamic world
 
-animated_box.cc 는 플러그인 생성용! 여러개 생성하고, 각 waypoint 설정하면 됨.
+1. ``animated_box.cc`` is for generating plugin. We can generates several ``*.cc``, and modify each waypoints.
 
-class 이름은 매번 바꿔줘야함!
+2. ```Important```: we have to change every class name.
 
-CMakeLists.txt에 적절히 추가할 것.
+3. Add ```CMakeLists.txt```
+   ```
+    add_library(animated_box_map1_1 SHARED dynamic_obstacles/animated_box_map1_1.cc)
+    target_link_libraries(animated_box_map1_1 ${GAZEBO_LIBRARIES})
+   ```
 
-"drc_practice_blue_cyclinder" 는 동적 장애물로 가져온 모델.
+4. "drc_practice_blue_cyclinder" is dynamic obstacles.
 
-model.sdf 안에 다음 tag 추가할 것.
+5. Add following tag to the ``model.sdf``.
 
-```
+    ```
         ...
         <static>1</static>
         <allow_auto_disable>1</allow_auto_disable>
         <plugin name='push_animate' filename='libanimated_box.so'/>
     </model>
-</sdf>
-```
+    </sdf>
+    ```
 
-원하는 map.world 들어가서, 아래처럼 모델 불러오면 됨
-```
+6. Can load dynamic models in ``map.world``
+    ```
         <include>
             <uri>model://drc_practice_blue_cylinder</uri>      
             <name>blue_cylinder</name>
         </include>
-```
-여러개 불러올거면, 각 모델 복붙한 다음에 이름 안꼬이게 자알 설정하기.
+    ```
+7. If you want multiple models, please rename every model to avoid duplication error.
 
 ## Turtle bot
-turtlebot3 기본 예제 참고해서 필요한 패키지 설치해놓기
+reference: turtlebot3 tutorial
 ```
 # in ~/.bashrc
 export TURTLEBOT3_MODEL=waffle # burger, waffle, waffle_pi
@@ -54,10 +58,7 @@ export TURTLEBOT3_MODEL=waffle # burger, waffle, waffle_pi
 
 ## Simulation
 ```roslaunch mobile_planning_test_env world_setup.launch```
-잘 모르겠는데 가제보 로딩 시간이 오래걸림.
-모델 경로 확인해야할수도
 
 ## Teleop
 ```rosrun mobile_planning_test_env teleop.py```
-기본코드라서 코드 수정이 필요할지도 모름.
 
